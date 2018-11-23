@@ -20,14 +20,21 @@
       a:visited{
         color:gray;
       }
+      .bgAnimation{
+        -webkit-transition: background 2s ;
+        -moz-transition: background 2s ;
+        -ms-transition: background 2s ;
+        -o-transition: background 2s ;
+        transition: background 2s ;
+      }
     </style>
 
     <nav class="nav justify-content-center mt-0 mb-1">
       <a class="nav-link linkFade" href="https://www.icecaves.com">Home</a>
     </nav>
 
-    <div class="jumbotron text-center">
-      <h3 id="display">Input values below and press caclulate!</h3>
+    <div class="jumbotron text-center bg-dark bgAnimation" id="displayBlock" style="background: linear-gradient(0deg, #79839B 50%, #343a40 50%);">
+       <h3 id="display" style="color:white">Input values below and press caclulate!</h3>
     </div>
 
     <div class="container mx-auto mb-3 text-center">

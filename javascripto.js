@@ -12,9 +12,15 @@ $(document).ready(function(){
   );
   $("#calcButton").click(function(e){
     e.preventDefault();
-    $("#display").html(`${calcVolume($("#radius").val(),$("#measure").val(),$("#length").val()).toFixed(2)} gallons`);
+    let volume = calcVolume($("#radius").val(),$("#measure").val(),$("#length").val()).toFixed(2);
+    let maxVolume = (Math.pow($("#radius").val(),2) * Math.PI * $("#length").val())/231;
+    $("#display").html(`${volume} gallons`);
+    $("#displayBlock").css("background",`linear-gradient(0deg, #79839B ${(volume/maxVolume)*100}%, #343a40 ${(volume/maxVolume)*100}%)`);
   });
   $("form").change(function(){
-    $("#display").html(`${calcVolume($("#radius").val(),$("#measure").val(),$("#length").val()).toFixed(2)} gallons`);
+    let volume = calcVolume($("#radius").val(),$("#measure").val(),$("#length").val()).toFixed(2);
+    let maxVolume = Math.pow($("#radius").val(),2) * Math.PI * $("#length").val()/231;
+    $("#display").html(`${volume} gallons`);
+    $("#displayBlock").css("background",`linear-gradient(0deg, #79839B ${(volume/maxVolume)*100}%, #343a40 ${(volume/maxVolume)*100}%)`);
   });
 });
